@@ -11,7 +11,6 @@ import AuthorDetail from "./AuthorDetail";
 class App extends Component {
   state = {
     currentAuthor: null,
-    authors: authors,
     filteredAuthors: authors
   };
   selectAuthor = author => {
@@ -36,7 +35,10 @@ class App extends Component {
       <div id="app" className="container-fluid">
         <div className="row">
           <div className="col-2">
-            <Sidebar selectAuthor={this.selectAuthor} />
+            <Sidebar
+              selectAuthor={this.selectAuthor}
+              filteredAuthors={this.filterAuthors}
+            />
           </div>
           <div className="content col-10">
             {this.state.currentAuthor === null ? (

@@ -7,7 +7,12 @@ class Sidebar extends Component {
         <img src="theindex.svg" className="logo" alt="the index logo" />
         <section>
           <h4 className="menu-item active">
-            <button onClick={() => this.props.selectAuthor(null)}>
+            <button
+              onClick={() => {
+                this.props.selectAuthor(null);
+                this.props.filteredAuthors(null);
+              }}
+            >
               AUTHORS
             </button>
           </h4>
